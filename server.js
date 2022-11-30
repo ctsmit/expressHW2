@@ -5,6 +5,10 @@ app.get("/greeting/:name", (req, res) => {
    res.send("Hi there! " + req.params.name + "!")
 })
 
+app.get("/tip/:total/:tipPercentage", (req, res) => {
+   let tip = req.params.total*(req.params.tipPercentage*.01)
+   res.send(tip.toString())
+})
 
 app.listen(port, () => {
    console.log("listening")
